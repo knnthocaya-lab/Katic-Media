@@ -19,9 +19,13 @@ main{max-width:980px;margin:0 auto;padding:20px 16px 60px}.c{background:var(--ca
 </style></head><body>
 <div id="login" class="box"><h1>Katic Media admin</h1><input id="em" type="email" placeholder="Email" autocomplete="email"><input id="pw" type="password" placeholder="Password" autocomplete="current-password"><button id="li">Sign in</button><p class="m" id="lm"></p></div>
 <div id="app" hidden>
-<header><b>Katic Media admin</b><nav><button data-t="orders" class="on">Orders</button><button data-t="shop">Shop</button><button data-t="pricing">Pricing</button><button data-t="leads">Leads</button><button data-t="files">Project files</button></nav><button class="g" id="lo">Sign out</button></header>
+<header><b>Katic Media admin</b><nav><button data-t="orders" class="on">Orders</button><button data-t="briefs">Briefs</button><button data-t="shop">Shop</button><button data-t="pricing">Pricing</button><button data-t="leads">Leads</button><button data-t="files">Project files</button></nav><button class="g" id="lo">Sign out</button></header>
 <main>
 <section id="orders"></section><section id="leads" hidden></section>
+<section id="briefs" hidden>
+ <div class="c"><b>Send clients the brief form</b><p class="m" style="margin:4px 0 10px">Copy a link and send it on WhatsApp or email. A service link opens the form with that service already picked.</p><div id="bshare"></div></div>
+ <div id="bl"></div>
+</section>
 <section id="pricing" hidden>
  <div class="c"><b id="rh">Add a pricing plan</b>
  <div class="r" style="justify-content:flex-start;margin-top:10px"><input id="rc" list="cats" placeholder="Service category e.g. Branding"><datalist id="cats"></datalist><input id="rn" placeholder="Plan name e.g. Growth"><input id="rp" type="number" min="0" placeholder="Price in UGX (0 = custom quote)"><input id="ru" placeholder="Per, e.g. / month or once" value="once"></div>
@@ -54,7 +58,7 @@ async function boot(){if(!sb)return;const{data:{session}}=await sb.auth.getSessi
  show(true);loadOrders()}
 $('#li').onclick=async()=>{if(!sb)return;const{error}=await sb.auth.signInWithPassword({email:$('#em').value.trim(),password:$('#pw').value});if(error)$('#lm').textContent=error.message;else boot()};
 $('#lo').onclick=async()=>{await sb.auth.signOut();show(false)};
-document.querySelector('nav').onclick=e=>{const t=e.target.dataset.t;if(!t)return;document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b==e.target));['orders','shop','pricing','leads','files'].forEach(x=>$('#'+x).hidden=x!=t);({orders:loadOrders,shop:loadShop,pricing:loadPricing,leads:loadLeads,files:loadFiles})[t]()};
+document.querySelector('nav').onclick=e=>{const t=e.target.dataset.t;if(!t)return;document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('on',b==e.target));['orders','briefs','shop','pricing','leads','files'].forEach(x=>$('#'+x).hidden=x!=t);({orders:loadOrders,briefs:loadBriefs,shop:loadShop,pricing:loadPricing,leads:loadLeads,files:loadFiles})[t]()};
 const wa=p=>{let d=String(p).replace(/\D/g,'');if(d.startsWith('0'))d='256'+d.slice(1);return 'https://wa.me/'+d};
 async function loadOrders(){const{data,error}=await sb.from('orders').select('*').order('created_at',{ascending:false}).limit(200);
  $('#orders').innerHTML=error?'<p class="m">'+esc(error.message)+'</p>':(data.length?data.map(o=>`<div class="c"><div class="r"><div><b>${esc(o.ref)}</b> <small>${new Date(o.created_at).toLocaleString()}</small><br>${esc(o.name)} · <a href="tel:${esc(o.phone)}">${esc(o.phone)}</a> · <a href="${wa(o.phone)}" target="_blank" rel="noopener">WhatsApp</a></div><select data-id="${o.id}">${Object.entries(STATUS).map(([k,v])=>`<option value="${k}" ${k==o.status?'selected':''}>${v}</option>`).join('')}</select></div><p class="m" style="margin-top:8px">${(o.items||[]).map(i=>`${i.qty} × ${esc(i.name)} (${esc(i.size)})`).join(', ')} · <b style="color:var(--tx)">UGX ${Number(o.total).toLocaleString()}</b></p></div>`).join(''):'<p class="m">No orders yet.</p>')}
@@ -123,6 +127,23 @@ $('#ra').onclick=async()=>{const cat=$('#rc').value.trim(),name=$('#rn').value.t
  const{error}=await(rEdit?sb.from('rate_plans').update(row).eq('id',rEdit):sb.from('rate_plans').insert(row));
  if(error){$('#rm').textContent=error.message;return}
  $('#rm').textContent=rEdit?'Saved. The website is updated.':'Added. It is now live on the website.';resetPlan();loadPricing()};
+/* ===== Client briefs ===== */
+const BST={new:'New',reviewing:'Reviewing',proposal_sent:'Proposal sent',won:'Won',closed:'Closed'};
+const SVL=[['Any service (general link)',''],['Branding & identity','branding'],['Digital marketing','digital'],['Website design','websites'],['Content management','content'],['Campaigns','campaigns'],['Advisory & training','advisory']];
+const bURL=s=>new URL('brief.html'+(s?'?s='+s:''),location.href).href;
+let BRS=[];
+$('#bshare').innerHTML=SVL.map(([n,s])=>`<div class="r" style="margin:6px 0"><span>${esc(n)}<br><small>${esc(bURL(s))}</small></span><button class="g" data-copy="${esc(bURL(s))}">Copy link</button></div>`).join('');
+$('#bshare').onclick=async e=>{const u=e.target.dataset.copy;if(!u)return;try{await navigator.clipboard.writeText(u);e.target.textContent='Copied'}catch(x){prompt('Copy this link',u)}setTimeout(()=>e.target.textContent='Copy link',1500)};
+function bDoc(b){const m=b.data||{},e=esc,secs=m.sections||[];return `<!DOCTYPE html><html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Client brief</title><style>@page{margin:18mm}body{font-family:Calibri,Arial,sans-serif;color:#1d1d1f;font-size:11pt}h1{font-size:24pt;margin:0 0 4pt;color:#0b6b52}h2{font-size:13pt;background:#e6f7f1;padding:6pt 8pt;margin:16pt 0 6pt;color:#0b6b52}table{width:100%;border-collapse:collapse}td{border:1px solid #cfcfd4;padding:6pt 8pt;vertical-align:top}td.q{width:38%;background:#f5f5f7;font-weight:bold}.m{color:#6e6e73;font-size:10pt}</style></head><body><h1>Client Brief</h1><p class="m">Katic Media · ${e(new Date(b.created_at).toLocaleDateString())} · Ref ${e(b.ref)}</p><table><tr><td class="q">Business</td><td>${e(b.business)}</td></tr><tr><td class="q">Contact</td><td>${e(b.contact_name||'')} · ${e(b.phone||'')}${b.email?' · '+e(b.email):''}</td></tr><tr><td class="q">Services</td><td>${e((b.services||[]).join(', '))}</td></tr></table>${secs.map(s=>`<h2>${e(s.t)}</h2><table>${s.items.map(i=>`<tr><td class="q">${e(i.l)}</td><td>${e(i.a).replace(/\n/g,'<br>')}</td></tr>`).join('')}</table>`).join('')}</body></html>`}
+function bWord(b){const f=new Blob(['\ufeff',bDoc(b)],{type:'application/msword'}),a=document.createElement('a');a.href=URL.createObjectURL(f);a.download='Client-Brief-'+b.business.replace(/[^\w]+/g,'-')+'.doc';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000)}
+function bPrint(b){const f=document.createElement('iframe');f.style.cssText='position:fixed;right:0;bottom:0;width:0;height:0;border:0';document.body.appendChild(f);f.contentDocument.open();f.contentDocument.write(bDoc(b));f.contentDocument.close();setTimeout(()=>{f.contentWindow.focus();f.contentWindow.print();setTimeout(()=>f.remove(),2000)},400)}
+async function loadBriefs(){const{data,error}=await sb.from('briefs').select('*').order('created_at',{ascending:false}).limit(200);BRS=data||[];
+ $('#bl').innerHTML=error?'<p class="m">'+esc(error.message)+'</p>':(BRS.length?BRS.map(b=>`<div class="c" data-id="${b.id}"><div class="r"><div><b>${esc(b.business)}</b> <small>· ${esc(b.ref)} · ${new Date(b.created_at).toLocaleString()}</small><br>${esc(b.contact_name||'')} · <a href="tel:${esc(b.phone||'')}">${esc(b.phone||'')}</a> · <a href="${wa(b.phone||'')}" target="_blank" rel="noopener">WhatsApp</a>${b.email?' · <a href="mailto:'+esc(b.email)+'">'+esc(b.email)+'</a>':''}<br><small>${esc((b.services||[]).join(' · '))}</small></div><select data-st="${b.id}">${Object.entries(BST).map(([k,v])=>`<option value="${k}" ${k==b.status?'selected':''}>${v}</option>`).join('')}</select></div><div class="r" style="justify-content:flex-start;margin-top:8px"><button class="g" data-act="view">View answers</button><button class="g" data-act="word">Download Word</button><button class="g" data-act="pdf">Print / PDF</button><button class="g" data-act="del">Delete</button></div><div class="bdy" hidden></div></div>`).join(''):'<p class="m">No briefs yet. Send a client the link above.</p>')}
+$('#bl').onchange=async e=>{const id=e.target.dataset.st;if(!id)return;const{error}=await sb.from('briefs').update({status:e.target.value}).eq('id',id);e.target.style.outline=error?'2px solid red':'2px solid #30d158';setTimeout(()=>e.target.style.outline='',1200)};
+$('#bl').onclick=async e=>{const a=e.target.dataset.act;if(!a)return;const card=e.target.closest('[data-id]'),b=BRS.find(x=>x.id==card.dataset.id);if(!b)return;
+ if(a=='word')bWord(b);if(a=='pdf')bPrint(b);
+ if(a=='view'){const d=card.querySelector('.bdy');if(d.hidden&&!d.innerHTML)d.innerHTML=((b.data||{}).sections||[]).map(s=>`<h2 style="font-size:15px;margin:14px 0 6px">${esc(s.t)}</h2>`+s.items.map(i=>`<p style="margin:6px 0"><small>${esc(i.l)}</small><br>${esc(i.a).replace(/\n/g,'<br>')}</p>`).join('')).join('');d.hidden=!d.hidden;e.target.textContent=d.hidden?'View answers':'Hide answers'}
+ if(a=='del'){if(!confirm('Delete this brief?'))return;await sb.from('briefs').delete().eq('id',b.id);loadBriefs()}};
 loadClients();
 boot();
 </script></body></html>
