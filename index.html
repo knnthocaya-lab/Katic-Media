@@ -173,14 +173,15 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
 .tag{font-size:11px;border-radius:99px;padding:3px 11px;background:var(--bg2);white-space:nowrap;color:var(--mu)}.tag.now{background:var(--ac);color:#fff}
 #qa{scroll-margin-top:70px}
 @media(max-width:700px){.sr{grid-template-columns:1fr}.sr span{margin-top:6px}}
-@media(min-width:701px){.exp{grid-template-columns:repeat(3,1fr)}.exp .tile{min-height:190px}}
 .bf{margin:26px auto 0;max-width:720px;background:var(--bg2);border-radius:22px;padding:22px 26px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;text-align:left}.bf b{font-size:18px;letter-spacing:-.02em}.bf p{color:var(--mu);font-size:14px;margin-top:2px}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,64px);align-items:center}.cl .sub{margin-left:0}.cl .f{margin-top:26px}.cr .rates{grid-template-columns:1fr 1fr;text-align:center;gap:14px}.cr .rate{justify-content:center}
+@media(max-width:820px){.cg{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <nav>
   <a href="#hero" class="brand" aria-label="Katic Media home"><img id="lg" alt="" height="28"><b>Katic Media</b></a>
-  <div class="l"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#rates">Rates</a><a href="#shop">Shop</a><a href="#assess">Start a project</a><a href="brief.html">Client brief</a><a href="#contact">Contact</a></div>
+  <div class="l"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#rates">Rates</a><a href="#shop">Shop</a><a href="brief.html">What can we do for you?</a><a href="#contact">Contact</a></div>
   <div class="nr">
     <button class="tg" id="tg" aria-label="Switch between light and dark mode"><svg viewBox="0 0 24 24"><mask id="mk"><rect width="24" height="24" fill="#fff"/><circle class="mc" cx="26" cy="-2" r="7.5" fill="#000"/></mask><circle cx="12" cy="12" r="7" fill="currentColor" mask="url(#mk)"/><g class="ry" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
     <button class="ib" id="ac" aria-label="Account" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></button>
@@ -188,13 +189,13 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
     <button class="bgr" id="bgr" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
   </div>
 </nav>
-<div class="mm" id="mm"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#rates">Rates</a><a href="#shop">Shop</a><a href="#assess">Start a project</a><a href="brief.html">Client brief</a><a href="#contact">Contact</a></div>
+<div class="mm" id="mm"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#rates">Rates</a><a href="#shop">Shop</a><a href="brief.html">What can we do for you?</a><a href="#contact">Contact</a></div>
 
 <section id="hero" data-pg="home"><div class="orb"></div>
   <div class="w">
     <h1 aria-label="We build brands that get noticed.">We build brands that<br><span class="ln" id="ln" aria-hidden="true"><span class="words" id="words"></span><i class="caret"></i></span></h1>
     <p class="sub">Katic Media is a marketing, advertising and consultancy agency in Gulu, Uganda. Strategy, branding, content, websites and campaigns, all under one roof.</p>
-    <div class="cta"><a class="btn" href="#assess">Start a project</a><a class="btn g" href="#work">See our work ›</a></div>
+    <div class="cta"><a class="btn" href="brief.html">What can we do for you?</a><a class="btn g" href="#work">See our work ›</a></div>
   </div>
 </section>
 
@@ -210,8 +211,7 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
   <a class="tile" href="#services"><span class="ic">✦</span><div><h3>Services</h3><p>Branding, marketing, content, websites and more.</p><span class="more">Explore services ›</span></div></a>
   <a class="tile" href="#rates"><span class="ic">◎</span><div><h3>Rates</h3><p>Simple, clear pricing for every service.</p><span class="more">See our rates ›</span></div></a>
   <a class="tile" href="#shop"><span class="ic">◍</span><div><h3>Shop</h3><p>Studio merch for people who care how things look.</p><span class="more">Visit the shop ›</span></div></a>
-  <a class="tile" href="#assess"><span class="ic">✎</span><div><h3>Start a project</h3><p>Answer a few quick questions and we will recommend where to begin.</p><span class="more">Get started ›</span></div></a>
-  <a class="tile" href="brief.html"><span class="ic">▤</span><div><h3>Client brief</h3><p>Share the full picture of your business and your ideas in one form.</p><span class="more">Fill the brief ›</span></div></a>
+  <a class="tile" href="brief.html"><span class="ic">✎</span><div><h3>What can we do for you?</h3><p>Tell us about your business and your ideas. We will recommend where to begin.</p><span class="more">Tell us more ›</span></div></a>
  </div></div></section>
 
 <section id="clients" data-pg="home" class="alt" style="padding:100px 0 80px"><div class="w c">
@@ -256,32 +256,24 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
   <div class="shop" id="sg"></div>
 </div></section>
 
-<section id="assess" data-pg="assess" class="pgs"><div class="w c">
-  <h2>Tell us what you need.</h2><p class="sub">Five quick questions. We’ll recommend where to start.</p>
-  <div class="qa" id="qa" style="text-align:left"></div>
-  <div class="bf"><div><b>Prefer to give us the full picture?</b><p>Our detailed client brief covers your business, your ideas and what you want us to build.</p></div><a class="btn" href="brief.html">Fill the client brief</a></div>
-</div></section>
-
-<section id="contact" data-pg="home" class="alt"><div class="w" style="max-width:640px">
-  <div class="c"><h2>Say hello.</h2><p class="sub">Questions, ideas or just a coffee? We reply within a day.</p></div>
-  <form class="f" id="cf" style="margin-top:44px">
+<section id="contact" data-pg="home" class="alt"><div class="w cg">
+  <div class="cl"><h2>Say hello.</h2><p class="sub">Questions, ideas or just a coffee? We reply within a day.</p>
+  <form class="f" id="cf">
     <input id="cn" placeholder="Your name" required><input id="ce" type="email" placeholder="Email" required>
     <textarea id="cm" placeholder="How can we help?" required></textarea>
     <button class="btn" style="padding:15px">Send message</button>
-  </form>
-</div>
-<div class="w" style="margin-top:40px">
-  <div class="rates" style="grid-template-columns:repeat(4,minmax(0,1fr));text-align:center">
+  </form></div>
+  <div class="cr"><div class="rates">
     <div class="rate"><h3>Call</h3><p style="color:var(--mu);margin-top:8px"><a href="tel:+256776570086">+256 776 570 086</a><br><a href="tel:+256742433680">+256 742 433 680</a></p></div>
     <div class="rate"><h3>WhatsApp</h3><p style="margin-top:8px"><a href="#" id="wa" style="color:var(--ac)">Chat with us</a></p></div>
     <div class="rate"><h3>Email</h3><p style="color:var(--mu);margin-top:8px;word-break:break-all"><a href="mailto:katicconsult@gmail.com">katicconsult@gmail.com</a></p></div>
     <div class="rate"><h3>Visit</h3><p style="color:var(--mu);margin-top:8px">Queens Avenue, next to KSP Hotel and Maharajah Showroom, Gulu City<br>P.O. Box 419</p></div>
-  </div>
+  </div></div>
 </div></section>
 
 <footer>
   <div class="soc"><!-- Replace each link below with your real social media page --><a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a><a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a><a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a><a href="https://wa.me/256776570086" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.14-.2-1.1-1.5-1.1-2.8 0-1.3.7-1.95.95-2.2.25-.27.55-.33.73-.33h.52c.17 0 .4-.05.6.45.25.6.85 2.1.92 2.25.08.15.12.33.03.5-.1.2-.15.3-.3.47-.15.18-.3.38-.43.5-.15.15-.3.3-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.27.1 1.75.83 2.05.98.3.15.5.22.57.35.08.12.08.7-.17 1.4z"/></svg></a></div>
-  <div class="fl"><span><a href="brief.html" style="color:var(--ac)">Client brief</a></span><span>© 2026 Katic Media. All rights reserved.</span><span>Queens Avenue, next to KSP Hotel and Maharajah Showroom, Gulu City · P.O. Box 419</span><span>+256 776 570 086 · +256 742 433 680 · katicconsult@gmail.com</span></div>
+  <div class="fl"><span><a href="brief.html" style="color:var(--ac)">What can we do for you?</a></span><span>© 2026 Katic Media. All rights reserved.</span><span>Queens Avenue, next to KSP Hotel and Maharajah Showroom, Gulu City · P.O. Box 419</span><span>+256 776 570 086 · +256 742 433 680 · katicconsult@gmail.com</span></div>
 </footer>
 
 <div class="shade" id="shade"></div>
@@ -374,6 +366,7 @@ $('#m1').innerHTML=row(CL.filter((_,i)=>i%2==0));$('#m2').innerHTML=row(CL.filte
 $('#st').innerHTML=[[CL.length,'brands'],[new Set(CL.map(c=>c.s)).size,'industries'],[Object.keys(SV).length,'services']].map(x=>`<div><b data-n="${x[0]}">0</b><span>${x[1]}</span></div>`).join('');
 const io=new IntersectionObserver((en,ob)=>en.forEach(e=>{if(!e.isIntersecting)return;ob.unobserve(e.target);const n=+e.target.dataset.n,t0=performance.now();(function f(t){const p=Math.min(1,(t-t0)/1400);e.target.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0)}),{threshold:.6});
 document.querySelectorAll('#st b').forEach(b=>io.observe(b));
+const BKP={'Branding':'branding','Digital marketing':'digital','Websites':'websites','Content':'content','Campaigns':'campaigns','Advisory & training':'advisory'};
 let wf='Branding';
 function drawWork(){
  $('#wf').innerHTML=Object.keys(SV).map(k=>`<button class="chip ${k==wf?'on':''}" data-c="${k}">${k} · ${CL.filter(c=>c.v.includes(k)).length}</button>`).join('');
@@ -384,7 +377,7 @@ $('#wf').onclick=e=>{if(e.target.dataset.c){wf=e.target.dataset.c;drawWork()}};
 $('#wg').addEventListener('pointermove',e=>{const t=e.target.closest('.pt');if(!t)return;const r=t.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;t.style.transform=`rotateY(${(x-.5)*14}deg) rotateX(${(.5-y)*14}deg) translateY(-4px)`;t.style.setProperty('--mx',x*100+'%');t.style.setProperty('--my',y*100+'%');t.style.boxShadow='0 22px 50px rgba(0,0,0,.22)'});
 $('#wg').addEventListener('pointerout',e=>{const t=e.target.closest('.pt');if(t){t.style.transform='';t.style.boxShadow=''}});
 $('#wg').onclick=e=>{const b=e.target.closest('.pc');if(!b)return;const c=CL.find(x=>x.k==b.dataset.k);
- $('#mb').innerHTML=`<div class="mt" style="background:${c.bg}"><img src="${c.u}" alt="${c.n} logo"></div><div class="bd"><small style="color:var(--mu)">${c.s}</small><h3 style="font-size:30px;letter-spacing:-.03em">${c.n}</h3><p style="color:var(--mu)">${c.t}</p><p style="margin-top:18px"><b>Our ${wf.toLowerCase()} work covers</b></p><ul class="dl">${SV[wf].x.map(x=>`<li>${x}</li>`).join('')}</ul>${(WORK[c.k]||{})[wf]?`<p style="margin-top:18px"><b>Project files</b></p><div class="gal">${WORK[c.k][wf].map(fileEl).join('')}</div>`:''}<div class="tags">${c.v.map(v=>`<span class="${v==wf?'me':''}">${v}</span>`).join('')}</div><div style="margin-top:24px"><button class="btn" onclick="closeM();location.hash='#assess'">Start something similar</button> <button class="btn g" onclick="closeM()">Close</button></div></div>`;
+ $('#mb').innerHTML=`<div class="mt" style="background:${c.bg}"><img src="${c.u}" alt="${c.n} logo"></div><div class="bd"><small style="color:var(--mu)">${c.s}</small><h3 style="font-size:30px;letter-spacing:-.03em">${c.n}</h3><p style="color:var(--mu)">${c.t}</p><p style="margin-top:18px"><b>Our ${wf.toLowerCase()} work covers</b></p><ul class="dl">${SV[wf].x.map(x=>`<li>${x}</li>`).join('')}</ul>${(WORK[c.k]||{})[wf]?`<p style="margin-top:18px"><b>Project files</b></p><div class="gal">${WORK[c.k][wf].map(fileEl).join('')}</div>`:''}<div class="tags">${c.v.map(v=>`<span class="${v==wf?'me':''}">${v}</span>`).join('')}</div><div style="margin-top:24px"><a class="btn" href="brief.html?s=${BKP[wf]||''}">Start something similar</a> <button class="btn g" onclick="closeM()">Close</button></div></div>`;
  $('#modal').classList.add('open')};
 /* PROJECT FILES: upload files to a folder called "work" next to index.html (e.g. work/cafa/logo.jpg),
    then list them here by client key and service. Images, videos (mp4/webm) and PDFs are supported.
@@ -470,95 +463,6 @@ $('#ro').onclick=e=>{const r=e.target.dataset.tr;if(!r)return;if(sb){$('#tr').va
 drawOrd();
 save();
 
-/* Needs assessment: edit the questions in QS to change what clients are asked per service */
-const SVK={'Branding & identity':'Branding','Digital marketing':'Digital marketing','Website design':'Websites','Content management':'Content','Campaigns':'Campaigns','Advisory & training':'Advisory & training'};
-const QS={
- 'Branding & identity':[
-  {k:'b1',q:'Do you already have a logo?',t:'one',o:['No, starting from scratch','Yes, it needs a refresh','Yes, I only need brand guidelines']},
-  {k:'b2',q:'Where will your brand be used?',t:'many',o:['Social media','Print and packaging','Signage','Website','Uniforms and merch']},
-  {k:'b3',q:'Describe the feel of your brand in three words',t:'text',ph:'e.g. modern, trusted, warm'}],
- 'Digital marketing':[
-  {k:'d1',q:'What is your main goal?',t:'one',o:['More awareness and followers','More leads and sales','Promote a launch or event','Improve our reputation']},
-  {k:'d2',q:'Which channels interest you?',t:'many',o:['Facebook','Instagram','TikTok','Google ads','WhatsApp','Email']},
-  {k:'d3',q:'Do you run paid ads today?',t:'one',o:['Yes','No','Tried before']},
-  {k:'d4',q:'Who is your ideal customer?',t:'text',ph:'e.g. young professionals in Gulu'}],
- 'Website design':[
-  {k:'w1',q:'What type of website do you need?',t:'one',o:['Company or portfolio site','Online store','Booking or portal','Single landing page']},
-  {k:'w2',q:'Roughly how many pages?',t:'one',o:['1','2 to 5','6 to 10','More than 10','Not sure']},
-  {k:'w3',q:'Do you have a domain and hosting?',t:'one',o:['Yes','No','Not sure']},
-  {k:'w4',q:'Do you need to accept payments online?',t:'one',o:['Mobile money','Cards','Both','No']}],
- 'Content management':[
-  {k:'c1',q:'What content do you need?',t:'many',o:['Photos','Videos and reels','Graphic designs','Captions and copywriting']},
-  {k:'c2',q:'How many posts a month?',t:'one',o:['About 8','12 to 16','20 or more','Not sure']},
-  {k:'c3',q:'Do you have your own photos and videos?',t:'one',o:['Yes, plenty','A few','No, we need them created']}],
- 'Campaigns':[
-  {k:'p1',q:'What is the campaign for?',t:'one',o:['Product launch','Event','Brand awareness','Seasonal promotion']},
-  {k:'p2',q:'Where should it run?',t:'many',o:['Social media','Radio and TV','Print and billboards','On the ground and events']},
-  {k:'p3',q:'How long should it run?',t:'one',o:['1 to 2 weeks','About a month','3 months or more','Not sure']}],
- 'Advisory & training':[
-  {k:'a1',q:'What do you need?',t:'many',o:['Business strategy','Business plan','Marketing training for staff','Founder mentorship']},
-  {k:'a2',q:'How many people will attend?',t:'one',o:['1 to 5','6 to 15','16 to 30','More than 30']},
-  {k:'a3',q:'Preferred format?',t:'one',o:['In person','Online','Either']}]};
-const PLAT=['Facebook','Instagram','TikTok','X (Twitter)','LinkedIn','YouTube'];
-const RANGES=[['Under UGX 500K',500000],['UGX 500K to 1M',1000000],['UGX 1M to 2M',2000000],['UGX 2M to 5M',5000000],['UGX 5M to 10M',10000000],['Above UGX 10M',15000000],['Not sure, advise me',0]];
-const APPR=['Start with the most important one first','Do everything together as one package','Not sure, advise me'];
-let step=0,A={needs:[]};
-const steps=()=>{const s=[{id:'needs'}];A.needs.forEach(n=>s.push({id:'svc',n}));if(A.needs.length>1)s.push({id:'multi'});return s.concat([{id:'budget'},{id:'start'},{id:'online'},{id:'about'},{id:'contact'}])};
-const bud=()=>{const t=Number(A.bamt);if(t>0)return t;const r=RANGES.find(x=>x[0]==A.bchip);return r&&r[1]?r[1]:null};
-const plansOf=n=>{const all=(rates[SVK[n]]||[]).filter(r=>r[1]>0).map(r=>({n:r[0],p:r[1],u:r[2],hot:!!r[4]})),m=A.bper==='Per month (ongoing)',f=all.filter(x=>/month/i.test(x.u)==m);return(f.length?f:all).sort((a,b)=>a.p-b.p)};
-function reco(){const B=bud(),S=A.needs,pr=S.includes(A.prio)?A.prio:S[0],order=[pr,...S.filter(x=>x!=pr)],cheap=s=>plansOf(s)[0],sumMin=S.reduce((t,s)=>t+(cheap(s)?cheap(s).p:0),0);
- let together=A.appr==APPR[1]||(A.appr!=APPR[0]&&(B==null||B>=sumMin));if(B!=null&&B<sumMin)together=false;
- const rows=[];
- if(together){const pick={};let cost=0;order.forEach(s=>{const pl=plansOf(s);pick[s]=B==null?(pl.find(x=>x.hot)||pl[0]||null):pl[0]||null;cost+=pick[s]?pick[s].p:0});
-  if(B!=null)order.forEach(s=>{const cur=pick[s]?pick[s].p:0,c=plansOf(s).filter(x=>cost-cur+x.p<=B);if(c.length){const nb=c[c.length-1];cost+=nb.p-cur;pick[s]=nb}});
-  order.forEach(s=>rows.push({s,pl:pick[s],st:pick[s]?'now':'custom'}))}
- else{let left=B,blocked=false;order.forEach(s=>{const pl=plansOf(s);if(!pl.length){rows.push({s,st:s==pr?'custom':'later'});return}
-  if(B==null){rows.push({s,pl:pl.find(x=>x.hot)||pl[0],st:s==pr?'now':'later'});return}
-  const fit=pl.filter(x=>x.p<=left);if(fit.length&&!blocked){const b=fit[fit.length-1];left-=b.p;rows.push({s,pl:b,st:'now'})}else{if(s==pr)blocked=true;rows.push({s,pl:pl[0],st:s==pr?'over':'later'})}})}
- return{rows,B,together,pr,total:rows.reduce((t,r)=>t+((r.st=='now'||r.st=='over')&&r.pl?r.pl.p:0),0)}}
-const TAG={now:'Start now',later:'Phase 2',over:'Closest fit',custom:'Custom quote'};
-const planTxt=r=>r.pl?esc(r.pl.n)+' · '+fmt(r.pl.p)+' '+esc(r.pl.u):'Custom quote';
-function flat(R){const F={name:A.name||'',contact:A.contact||'',biz:A.biz||'',Services:A.needs.join(', ')};
- if(A.needs.length>1){F['Approach']=A.appr||'Not sure, advise me';F['Most important']=R.pr}
- A.needs.forEach(n=>{const d=QS[n].map(x=>{const v=A[x.k];return v&&v.length?x.q+' '+[].concat(v).join(', '):''}).filter(Boolean).join('; ');if(d)F[n]=d});
- const B=bud();F['Budget']=B?(A.bamt?fmt(Number(A.bamt)):A.bchip)+' ('+(A.bper||'One-off project')+')':(A.bchip||'Not given');
- F['Start']=[A.start,A.sdate].filter(Boolean).join(' / ')||'Not given';
- F['Social media']=A.has_soc=='Yes'?(PLAT.map(p=>A['soc_'+p+'_h']?p+': '+A['soc_'+p+'_h']+(A['soc_'+p+'_a']?' ('+A['soc_'+p+'_a']+')':''):'').filter(Boolean).join('; ')||'Yes (no details given)'):(A.has_soc||'Not answered');
- F['Website']=A.has_web=='Yes'?(A.web_url||'Yes')+(A.web_a?' ('+A.web_a+')':''):(A.has_web||'Not answered');
- F['Business stage']=A.stage||'';F['Main goal']=A.goal||'';
- F['Suggested plan']=R.rows.map(r=>r.s+': '+(r.pl?r.pl.n+' '+fmt(r.pl.p)+' '+r.pl.u:'Custom quote')+' ['+TAG[r.st]+']').join(' | ');
- if(A.notes)F['Notes']=A.notes;return F}
-const ch=(k,o,t,cls)=>`<div class="chs">${o.map(x=>`<button class="chip ${[].concat(A[k]||[]).includes(x)?'on':''}" data-k="${k}" data-t="${t}" data-o="${esc(x)}">${esc(x)}</button>`).join('')}</div>`;
-const qi=x=>`<p class="qq">${esc(x.q)}</p>`+(x.t=='text'?`<input data-k="${x.k}" placeholder="${esc(x.ph||'')}" value="${esc(A[x.k]||'')}">`:ch(x.k,x.o,x.t));
-const sl=(k,o,ph)=>`<select data-k="${k}"><option value="">${ph}</option>${o.map(x=>`<option ${A[k]==x?'selected':''}>${x}</option>`).join('')}</select>`;
-function drawQA(){const st=steps(),n=st.length,cur=st[step];
- let h=`<div class="bar"><div style="width:${Math.round(step/n*100)}%"></div></div>`,last=step==n-1;
- if(!cur){const R=reco(),B=R.B,over=R.rows.find(r=>r.st=='over'),nm=(A.name||'').split(' ')[0];
-  h+=`<h3>Thanks${nm?', '+esc(nm):''}. Here is where we would start.</h3><div class="rec"><small>${B?'Based on your budget of '+fmt(B)+' ('+esc(A.bper||'One-off project')+')':'Based on what you told us'}</small><br><b>${R.together&&R.rows.length>1?'One combined package':R.rows.length>1?'Start with '+esc(R.pr)+', then grow':esc(R.pr)}</b></div>`+R.rows.map(r=>`<div class="rr"><div><b>${esc(r.s)}</b><br><small>${planTxt(r)}</small></div><span class="tag ${r.st=='now'?'now':''}">${TAG[r.st]}</span></div>`).join('')
-  +`<p class="note" style="text-align:left;margin-top:14px">${R.total?'Estimated start-up total: <b>'+fmt(R.total)+'</b>. ':''}${over?'Your budget is a little below our entry plan for '+esc(over.s)+'. Send it anyway and we will tailor a lighter scope or phase the work. ':''}${!R.together&&R.rows.length>1?'We suggest starting with '+esc(R.pr)+' and adding the rest as phase 2. ':''}These are starting points from our rate cards. We will finalise one combined proposal with you.</p><div class="nav2" style="margin-top:auto"><button class="btn g" id="rs">Start over</button><button class="btn" id="sd">Send to our team</button></div>`;
-  $('#qa').innerHTML=h;return}
- if(cur.id=='needs')h+=`<h3>What do you need help with?</h3><p class="note" style="text-align:left;margin:-10px 0 8px">Pick everything that applies.</p>`+ch('needs',Object.keys(SVK),'many');
- if(cur.id=='svc')h+=`<h3>A few questions about ${esc(cur.n)}</h3>`+QS[cur.n].map(qi).join('');
- if(cur.id=='multi')h+=`<h3>You picked ${A.needs.length} services. How should we handle them?</h3>`+ch('appr',APPR,'one')+`<p class="qq">Which one matters most?</p>`+ch('prio',A.needs,'one')+`<p class="note" style="text-align:left;margin-top:14px">Either way, we will prepare one combined proposal for you.</p>`;
- if(cur.id=='budget'){const ref=A.needs.map(s=>{const p=plansOf(s)[0];return p?esc(s)+' from '+fmt(p.p):''}).filter(Boolean).join(' · ');
-  h+=`<h3>What budget do you have in mind?</h3><p class="note" style="text-align:left;margin:-10px 0 8px">Pick a range or type your own amount. We will shape our recommendation around it.</p>`+ch('bchip',RANGES.map(r=>r[0]),'one')+`<p class="qq">Or type your own amount (UGX)</p><input data-k="bamt" type="number" min="0" inputmode="numeric" placeholder="e.g. 1500000" value="${esc(A.bamt||'')}"><p class="qq">Is this a one-off budget or per month?</p>`+ch('bper',['One-off project','Per month (ongoing)'],'one')+(ref?`<p class="note" style="text-align:left;margin-top:14px">For reference, our rates start at: ${ref}</p>`:'')}
- if(cur.id=='start')h+=`<h3>When would you like to start?</h3>`+ch('start',['As soon as possible','Within 2 weeks','This month','In 1 to 3 months','Just exploring for now'],'one')+`<p class="qq">Or pick a date</p><input data-k="sdate" type="date" value="${esc(A.sdate||'')}">`;
- if(cur.id=='online')h+=`<h3>Your online presence</h3><p class="qq">Do you have social media accounts for your business?</p>`+ch('has_soc',['Yes','No'],'one')+(A.has_soc=='Yes'?`<p class="note" style="text-align:left;margin:10px 0 4px">Fill in the ones you have, and tell us if they are active.</p>`+PLAT.map(p=>`<div class="sr"><span>${p}</span><input data-k="soc_${p}_h" placeholder="@handle or page link" value="${esc(A['soc_'+p+'_h']||'')}">${sl('soc_'+p+'_a',['Posting regularly','Now and then','Inactive'],'Activity')}</div>`).join(''):'')
-  +`<p class="qq">Do you have a website?</p>`+ch('has_web',['Yes','No','Being built'],'one')+(A.has_web=='Yes'?`<div class="sr" style="grid-template-columns:1fr 170px"><input data-k="web_url" placeholder="https://" value="${esc(A.web_url||'')}">${sl('web_a',['Live and updated','Live but outdated','Not working'],'Status')}</div>`:'');
- if(cur.id=='about')h+=`<h3>A little about your business</h3><p class="qq">Where is your business today?</p>`+ch('stage',['Just an idea','Early, under 2 years','Growing steadily','Established, ready to scale'],'one')+`<p class="qq">What matters most right now?</p>`+ch('goal',['Be seen by more people','Get more customers','Look more professional','Train or organise my team'],'one');
- if(cur.id=='contact')h+=`<h3>Almost done. Who are we speaking to?</h3><div class="f"><input data-k="name" placeholder="Your name" value="${esc(A.name||'')}" autocomplete="name"><input data-k="contact" placeholder="Phone or email" value="${esc(A.contact||'')}"><input data-k="biz" placeholder="Business name" value="${esc(A.biz||'')}"><textarea data-k="notes" placeholder="Anything else we should know? (optional)">${esc(A.notes||'')}</textarea></div>`;
- h+=`<div class="nav2"><button class="btn g" id="bk" ${step?'':'style="visibility:hidden"'}>‹ Back</button><button class="btn" id="nx">${last?'See my recommendation':'Continue'}</button></div>`;
- $('#qa').innerHTML=h}
-$('#qa').onclick=e=>{const t=e.target,id=t.id,ob=t.closest('[data-o]');
- if(ob){const k=ob.dataset.k,o=ob.dataset.o;if(ob.dataset.t=='many'){const a=A[k]||[];A[k]=a.includes(o)?a.filter(x=>x!=o):[...a,o]}else A[k]=A[k]==o?'':o;
-  if(k=='bchip'&&A[k])A.bamt='';if(k=='needs'&&!A.needs.includes(A.prio))A.prio='';drawQA();return}
- if(id=='bk'){step=Math.max(0,step-1);drawQA();$('#qa').scrollIntoView({block:'start'})}
- if(id=='nx'){const c=steps()[step];if(c.id=='needs'&&!A.needs.length)return toast('Pick at least one service');if(c.id=='contact'&&(!(A.name||'').trim()||!(A.contact||'').trim()))return toast('Please add your name and a phone number or email');step++;drawQA();$('#qa').scrollIntoView({block:'start'})}
- if(id=='rs'){step=0;A={needs:[]};drawQA()}
- if(id=='sd'){const R=reco(),F=flat(R);lead({kind:'assessment',name:A.name||null,contact:A.contact||null,data:F});wa('New project request\n'+Object.entries(F).filter(([k,v])=>v).map(([k,v])=>({name:'Name',contact:'Contact',biz:'Business'}[k]||k)+': '+v).join('\n'));toast('Opening WhatsApp…')}};
-$('#qa').addEventListener('input',e=>{const k=e.target.dataset.k;if(!k||e.target.dataset.o)return;A[k]=e.target.value;if(k=='bamt'&&e.target.value){A.bchip='';document.querySelectorAll('#qa [data-k=bchip]').forEach(b=>b.classList.remove('on'))}});
-drawQA();
-
 /* Contact */
 $('#cf').onsubmit=e=>{e.preventDefault();lead({kind:'contact',name:$('#cn').value,contact:$('#ce').value,message:$('#cm').value});wa(`Message from ${$('#cn').value} (${$('#ce').value}):\n${$('#cm').value}`);e.target.reset();toast('Thanks, opening WhatsApp')};
 
@@ -618,14 +522,14 @@ const SVD={
  'Advisory & training':{g:'#5e5ce6,#0a84ff',pf:'Advisory & training',rt:'Advisory & training',t:'Practical business advice and hands-on training that help founders and teams grow with confidence.',x:['Business advisory sessions','Business plans and growth strategy','Workshops and team training','Marketing and brand training for staff','Mentorship for founders','Follow-up and support'],st:['Understand','Advise','Train','Follow up']}};
 const BK={'Branding & identity':'branding','Digital marketing':'digital','Campaigns':'campaigns','Content management':'content','Website design':'websites','Advisory & training':'advisory'};
 function openSvc(k){const d=SVD[k];if(!d)return;
- $('#mb').innerHTML=`<div class="mt" style="height:150px;background:linear-gradient(145deg,${d.g});color:#fff;align-items:end;justify-items:start"><h3 style="font-size:clamp(28px,5vw,40px);letter-spacing:-.035em;line-height:1.05">${k}</h3></div><div class="bd" data-svc="${k}"><p style="font-size:18px">${d.t}</p><p style="margin-top:20px"><b>What is included</b></p><ul class="inc">${d.x.map(i=>`<li>${i}</li>`).join('')}</ul><p><b>How it works</b></p><div class="stp">${d.st.map((x,i)=>`<div><b>Step ${i+1}</b>${x}</div>`).join('')}</div><button class="btn" data-go="assess">Start a project</button> <button class="btn g" data-go="work">See our work ›</button>${rates[d.rt]?' <button class="btn g" data-go="rates">See pricing ›</button>':''} <a class="btn g" href="brief.html?s=${BK[k]}">Fill our brief ›</a></div>`;
+ $('#mb').innerHTML=`<div class="mt" style="height:150px;background:linear-gradient(145deg,${d.g});color:#fff;align-items:end;justify-items:start"><h3 style="font-size:clamp(28px,5vw,40px);letter-spacing:-.035em;line-height:1.05">${k}</h3></div><div class="bd" data-svc="${k}"><p style="font-size:18px">${d.t}</p><p style="margin-top:20px"><b>What is included</b></p><ul class="inc">${d.x.map(i=>`<li>${i}</li>`).join('')}</ul><p><b>How it works</b></p><div class="stp">${d.st.map((x,i)=>`<div><b>Step ${i+1}</b>${x}</div>`).join('')}</div><a class="btn" href="brief.html?s=${BK[k]}">Tell us what you need</a> <button class="btn g" data-go="work">See our work ›</button>${rates[d.rt]?' <button class="btn g" data-go="rates">See pricing ›</button>':''}</div>`;
  $('#modal').classList.add('open')}
 $('#services').addEventListener('click',e=>{const t=e.target.closest('.tile');if(t)openSvc(t.dataset.s)});
 $('#mb').addEventListener('click',e=>{const g=e.target.dataset.go,w=e.target.closest('[data-svc]');if(!g||!w)return;const d=SVD[w.dataset.svc];closeM();if(g=='work'){wf=d.pf;drawWork()}if(g=='rates'){rt=d.rt;drawRates()}setTimeout(()=>{location.hash=='#'+g?route():location.hash='#'+g},60)});
 
-/* Pages: Our work, Services, Rates, Shop and Start a project open as their own pages; About, brands and Contact live on the home page */
-const PG={work:'Our work',services:'Services',rates:'Rates',shop:'Shop',assess:'Start a project'};
-function route(){const h=location.hash.slice(1),pg=PG[h]?h:'home';
+/* Pages: Our work, Services, Rates, Shop and open as their own pages; About, brands and Contact live on the home page */
+const PG={work:'Our work',services:'Services',rates:'Rates',shop:'Shop'};
+function route(){const h=location.hash.slice(1);if(h=='assess'){location.replace('brief.html');return}const pg=PG[h]?h:'home';
  document.querySelectorAll('[data-pg]').forEach(el=>el.hidden=el.dataset.pg!=pg);
  document.querySelectorAll('nav .l a,.mm a').forEach(a=>a.classList.toggle('on',!!PG[h]&&a.getAttribute('href')=='#'+h));
  document.title=(PG[h]?PG[h]+' · ':'')+'Katic Media';menu(0);
