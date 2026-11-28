@@ -20,7 +20,7 @@ nav{position:sticky;top:0;z-index:50;height:52px;display:flex;align-items:center
 nav b{font-weight:600;letter-spacing:-.02em}.brand{display:flex;align-items:center;gap:10px}.brand img{height:28px;width:auto}
 nav .l{display:flex;gap:26px;font-size:13px;color:var(--mu)}nav .l a:hover{color:var(--tx)}
 .cartb{background:none;border:0;cursor:pointer;font-size:13px;color:var(--mu)}.cartb span{background:var(--ac);color:#fff;border-radius:99px;padding:1px 7px;margin-left:4px;font-size:11px}
-@media(max-width:820px){nav .l{display:none}}
+@media(max-width:1020px){nav .l{display:none}}
 section{padding:110px max(22px,6vw)}section.alt{background:var(--bg2)}
 .w{max-width:1100px;margin:0 auto}
 h1{font-size:clamp(36px,7.2vw,92px);line-height:1;letter-spacing:-.045em;font-weight:700}
@@ -139,8 +139,8 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
 .bgr{display:none;width:38px;height:38px;border:0;background:none;position:relative;cursor:pointer}.bgr i{position:absolute;left:10px;right:10px;height:2px;background:var(--tx);border-radius:2px;transition:.35s}.bgr i:first-child{top:15px}.bgr i:last-child{top:22px}.bgr.on i:first-child{top:18px;transform:rotate(45deg)}.bgr.on i:last-child{top:18px;transform:rotate(-45deg)}
 .mm{position:fixed;inset:52px 0 0 0;z-index:49;background:var(--bg);padding:18px max(22px,6vw) calc(24px + env(safe-area-inset-bottom));display:flex;flex-direction:column;overflow:auto;opacity:0;transform:translateY(-14px);pointer-events:none;transition:.35s cubic-bezier(.2,.8,.2,1)}.mm.on{opacity:1;transform:none;pointer-events:auto}
 .mm a{font-size:32px;font-weight:700;letter-spacing:-.035em;padding:14px 0;border-bottom:1px solid var(--ln)}
-@media(min-width:821px){.mm{display:none}}
-@media(max-width:820px){.bgr{display:block}}
+@media(min-width:1021px){.mm{display:none}}
+@media(max-width:1020px){.bgr{display:block}}
 .gal{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:8px;margin:6px 0 18px}.gal>*{aspect-ratio:1;border-radius:14px;overflow:hidden;background:var(--bg2);border:1px solid var(--ln);display:grid;place-items:center;cursor:pointer;font-size:13px;color:var(--mu);padding:0}.gal img,.gal video{width:100%;height:100%;object-fit:cover}
 .lb{position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.93);display:none;place-items:center;padding:20px}.lb.on{display:grid}.lb img,.lb video{max-width:100%;max-height:88vh;border-radius:12px}.lb>button{position:absolute;top:14px;right:18px;background:none;border:0;color:#fff;font-size:30px;cursor:pointer;padding:6px}
 @keyframes sheet{from{transform:translateY(100%)}}
@@ -173,12 +173,14 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
 .tag{font-size:11px;border-radius:99px;padding:3px 11px;background:var(--bg2);white-space:nowrap;color:var(--mu)}.tag.now{background:var(--ac);color:#fff}
 #qa{scroll-margin-top:70px}
 @media(max-width:700px){.sr{grid-template-columns:1fr}.sr span{margin-top:6px}}
+@media(min-width:701px){.exp{grid-template-columns:repeat(3,1fr)}.exp .tile{min-height:190px}}
+.bf{margin:26px auto 0;max-width:720px;background:var(--bg2);border-radius:22px;padding:22px 26px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;text-align:left}.bf b{font-size:18px;letter-spacing:-.02em}.bf p{color:var(--mu);font-size:14px;margin-top:2px}
 </style>
 </head>
 <body>
 <nav>
   <a href="#hero" class="brand" aria-label="Katic Media home"><img id="lg" alt="" height="28"><b>Katic Media</b></a>
-  <div class="l"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#rates">Rates</a><a href="#shop">Shop</a><a href="#assess">Start a project</a><a href="#contact">Contact</a></div>
+  <div class="l"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#rates">Rates</a><a href="#shop">Shop</a><a href="#assess">Start a project</a><a href="brief.html">Client brief</a><a href="#contact">Contact</a></div>
   <div class="nr">
     <button class="tg" id="tg" aria-label="Switch between light and dark mode"><svg viewBox="0 0 24 24"><mask id="mk"><rect width="24" height="24" fill="#fff"/><circle class="mc" cx="26" cy="-2" r="7.5" fill="#000"/></mask><circle cx="12" cy="12" r="7" fill="currentColor" mask="url(#mk)"/><g class="ry" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></g></svg></button>
     <button class="ib" id="ac" aria-label="Account" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg></button>
@@ -186,7 +188,7 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
     <button class="bgr" id="bgr" aria-label="Menu" aria-expanded="false"><i></i><i></i></button>
   </div>
 </nav>
-<div class="mm" id="mm"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#rates">Rates</a><a href="#shop">Shop</a><a href="#assess">Start a project</a><a href="#contact">Contact</a></div>
+<div class="mm" id="mm"><a href="#about">About</a><a href="#work">Work</a><a href="#services">Services</a><a href="#rates">Rates</a><a href="#shop">Shop</a><a href="#assess">Start a project</a><a href="brief.html">Client brief</a><a href="#contact">Contact</a></div>
 
 <section id="hero" data-pg="home"><div class="orb"></div>
   <div class="w">
@@ -208,7 +210,8 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
   <a class="tile" href="#services"><span class="ic">✦</span><div><h3>Services</h3><p>Branding, marketing, content, websites and more.</p><span class="more">Explore services ›</span></div></a>
   <a class="tile" href="#rates"><span class="ic">◎</span><div><h3>Rates</h3><p>Simple, clear pricing for every service.</p><span class="more">See our rates ›</span></div></a>
   <a class="tile" href="#shop"><span class="ic">◍</span><div><h3>Shop</h3><p>Studio merch for people who care how things look.</p><span class="more">Visit the shop ›</span></div></a>
-  <a class="tile" href="#assess"><span class="ic">✎</span><div><h3>Start a project</h3><p>Answer five quick questions and we will recommend where to begin.</p><span class="more">Get started ›</span></div></a>
+  <a class="tile" href="#assess"><span class="ic">✎</span><div><h3>Start a project</h3><p>Answer a few quick questions and we will recommend where to begin.</p><span class="more">Get started ›</span></div></a>
+  <a class="tile" href="brief.html"><span class="ic">▤</span><div><h3>Client brief</h3><p>Share the full picture of your business and your ideas in one form.</p><span class="more">Fill the brief ›</span></div></a>
  </div></div></section>
 
 <section id="clients" data-pg="home" class="alt" style="padding:100px 0 80px"><div class="w c">
@@ -256,7 +259,7 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
 <section id="assess" data-pg="assess" class="pgs"><div class="w c">
   <h2>Tell us what you need.</h2><p class="sub">Five quick questions. We’ll recommend where to start.</p>
   <div class="qa" id="qa" style="text-align:left"></div>
-  <p class="note" style="margin-top:22px;text-align:center">Prefer to share the full picture? <a href="brief.html" style="color:var(--ac)">Fill in our detailed client brief ›</a></p>
+  <div class="bf"><div><b>Prefer to give us the full picture?</b><p>Our detailed client brief covers your business, your ideas and what you want us to build.</p></div><a class="btn" href="brief.html">Fill the client brief</a></div>
 </div></section>
 
 <section id="contact" data-pg="home" class="alt"><div class="w" style="max-width:640px">
@@ -278,7 +281,7 @@ html.tt *{transition:background-color .45s,color .45s,border-color .45s!importan
 
 <footer>
   <div class="soc"><!-- Replace each link below with your real social media page --><a href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg></a><a href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4z"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a><a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.6 5.82A4.28 4.28 0 0 1 15.54 3h-3.09v12.4a2.59 2.59 0 0 1-2.59 2.5c-1.42 0-2.6-1.16-2.6-2.6 0-1.72 1.66-3.01 3.37-2.48V9.66c-3.45-.46-6.47 2.22-6.47 5.64 0 3.33 2.76 5.7 5.69 5.7 3.14 0 5.69-2.55 5.69-5.7V9.01a7.35 7.35 0 0 0 4.3 1.38V7.3s-1.88.09-3.24-1.48z"/></svg></a><a href="https://linkedin.com/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></a><a href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7.2a3 3 0 0 0-2.1-2.1C19 4.6 12 4.6 12 4.6s-7 0-8.9.5A3 3 0 0 0 1 7.2C.5 9.1.5 12 .5 12s0 2.9.5 4.8a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-4.8.5-4.8s0-2.9-.5-4.8zM9.75 15.02V8.98L15.5 12l-5.75 3.02z"/></svg></a><a href="https://wa.me/256776570086" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.14-.2-1.1-1.5-1.1-2.8 0-1.3.7-1.95.95-2.2.25-.27.55-.33.73-.33h.52c.17 0 .4-.05.6.45.25.6.85 2.1.92 2.25.08.15.12.33.03.5-.1.2-.15.3-.3.47-.15.18-.3.38-.43.5-.15.15-.3.3-.13.6.17.3.77 1.27 1.65 2.05 1.13 1 2.1 1.33 2.4 1.48.3.15.47.12.65-.07.18-.2.75-.88.95-1.18.2-.3.4-.25.68-.15.27.1 1.75.83 2.05.98.3.15.5.22.57.35.08.12.08.7-.17 1.4z"/></svg></a></div>
-  <div class="fl"><span>© 2026 Katic Media. All rights reserved.</span><span>Queens Avenue, next to KSP Hotel and Maharajah Showroom, Gulu City · P.O. Box 419</span><span>+256 776 570 086 · +256 742 433 680 · katicconsult@gmail.com</span></div>
+  <div class="fl"><span><a href="brief.html" style="color:var(--ac)">Client brief</a></span><span>© 2026 Katic Media. All rights reserved.</span><span>Queens Avenue, next to KSP Hotel and Maharajah Showroom, Gulu City · P.O. Box 419</span><span>+256 776 570 086 · +256 742 433 680 · katicconsult@gmail.com</span></div>
 </footer>
 
 <div class="shade" id="shade"></div>
@@ -581,7 +584,7 @@ $('#tg').onclick=e=>{const r=e.currentTarget.getBoundingClientRect();setTheme(do
 const mm=$('#mm'),bgr=$('#bgr');
 function menu(o){mm.classList.toggle('on',!!o);bgr.classList.toggle('on',!!o);bgr.setAttribute('aria-expanded',!!o);document.body.style.overflow=o?'hidden':''}
 bgr.onclick=()=>menu(!mm.classList.contains('on'));mm.onclick=e=>{if(e.target.tagName=='A')menu(0)};
-addEventListener('resize',()=>{if(innerWidth>820)menu(0)});
+addEventListener('resize',()=>{if(innerWidth>1020)menu(0)});
 
 /* Supabase: accounts and project files */
 let accMode='in';
